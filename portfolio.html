@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mansi Pandey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #f0f0f0, #d9e4f5);
+            text-align: center;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        nav {
+            background: #34495e;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background: #1abc9c;
+            border-radius: 5px;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MANSI PANDEY</h1>
+        <img src="images/profile.jpg" alt="Profile Picture" class="profile-img">
+    </header>
+   
+    <nav>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#contact">Contact</a>
+        <a href="#projects">Projects</a>
+    </nav>
+    <section id="projects" class="fade-in">
+        <h2>Projects</h2>
+        <ul>
+            <li><b>eReBook:</b> Online Book Selling E-Commerce Website Using MERN Stack (MongoDB, ExpressJS, ReactJS, NodeJS)</li>
+            <li><b>Examedge:</b> Online Examination Platform, where you can get instant results based on your performance, using PHP, MySQL, HTML, CSS, JavaScript.</li>
+            <li><b>Chat for Multiusers:</b> A chat application for multiple users, similar to a WhatsApp group, developed using Java with Object-Oriented concepts, Networking, and JSF/Swing.</li>
+        </ul>
+    </section>
+
+    <main>
+        <section id="experience" class="fade-in">
+            <h2>Experience</h2>
+            <ul>
+                <li>On Job Training – OPLUS Cowork</li>
+                <li>Cybersecurity Job Simulation (Forage-Mastercard)</li>
+                <li>Cybersecurity Analyst Job Simulation (Forage-TATA)</li>
+                
+            </ul>
+        </section>
+
+        <section id="education" class="fade-in">
+            <h2>Education</h2>
+            <ul>
+                <li>MCA(Pursuing) - VIT Bhopal, VIT Group of Institutes , 2025-2027</li>
+                <li>B.Sc. in Computer Applications - Patna Women's College, 2022-2025</li>
+                <li>Diploma in Data Science - Patna Women's College (88%)</li>
+                <li>Bachan Mishra Higher Secondary School (81.80%)</li>
+                <li>Sanghmitra Public School (80.00%)</li>
+            </ul>
+        </section>
+
+        <section id="skills" class="fade-in">
+            <h2>Skills</h2>
+            <ul>
+                <li>C Programming, C++, Java, Python</li>
+                <li>Web Development (HTML, CSS, JavaScript, React)</li>
+                <li>MS-Excel, MS-PowerPoint, MS-Word</li>
+            </ul>
+        </section>
+
+        <section id="achievements" class="fade-in">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Credit-Based Add-On Certificate Course in Data Science</li>
+                <li>Runner-up in Parliamentary Debate (Rebel Spoken English)</li>
+                <li>Advanced Communication Skills & Personality Enhancement</li>
+                <li>Data Science 101 - Powered by IBM Developer Skills Network</li>
+            </ul>
+        </section>
+
+        <section id="hobbies" class="fade-in">
+            <h2>Hobbies</h2>
+            <ul>
+                <li>Interacting with New People</li>
+                <li>Social Work (Volunteering at Rise Up Community Foundation)</li>
+                <li>Listening to Music and Traveling</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h2>Contact</h2>
+        <ul>
+            <li><b>Phone:</b> +91 6205112610</li>
+            <li><b>Email:</b> pandeymansi2508@gmail.com</li>
+            <li><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/mansi-pandeypwc/" style="color: #1abc9c;">Visit Profile</a></li>
+            <li><b>GitHub:</b> <a href="https://github.com/mansi-pandey-coder" style="color: #1abc9c;">Mansi's GitHub</a></li>
+          
+        </ul>
+        <h3>Made with &hearts; by Mansi</h3>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".fade-in");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.5 });
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</body>
+</html>
